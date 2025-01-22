@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Grupo Gonave</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="features.css">
+    <link rel="stylesheet" href="carousel.css">
+    <link rel="stylesheet" href="blog.css">
+  
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="bootstrap" viewBox="0 0 118 94">
+        <title>Bootstrap</title>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
+      </symbol>
+        <symbol id="table" viewBox="0 0 16 16">
+          <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z"/>
+        </symbol>
+        <symbol id="collection" viewBox="0 0 16 16">
+          <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"/>
+        </symbol>
+        <symbol id="gear-fill" viewBox="0 0 16 16">
+          <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+        </symbol>
+        <symbol id="speedometer" viewBox="0 0 16 16">
+          <path d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2zM3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
+          <path fill-rule="evenodd" d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.945 11.945 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0z"/>
+        </symbol>
+      </svg>
+
+    <nav class="navbar navbar-expand-md bg-black fixed-top border-bottom" data-bs-theme="dark">
+    <div class="container">
+      <a class="navbar-brand d-md-none" href="#">
+        <svg class="bi" width="24" height="24"><use
+            xlink:href="#aperture" /></svg>
+        Menú
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvas" aria-controls="offcanvas"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas"
+        aria-labelledby="offcanvasLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasLabel">Menú</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav flex-grow-3 justify-content-between">
+            <a class="navbar-brand" href="#">Gonave</a>
+            <li class="nav-item"><a class="nav-link"
+              href="maneja.html">Maneja</a></li>
+            <li class="nav-item"><a class="nav-link" href="ordena.html">Ordena</a></li>
+
+            <li class="nav-item"><a class="nav-link"
+                href="#">Nosotros</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+<main>
+
+    <main class="container" style="padding-top: 45px;">
+        <div class="p-4 p-md-5 mb-4 border shadow-sm rounded text-body-emphasis">
+          <div class="row">
+            <div class="col-6">
+              <h1 class="display-4 fst-italic">Grupo Gonave</h1>
+              <p class="lead my-3">Lideres conectando fletes con fleteros. Utiliza nuestra plataforma
+                para ver pedidos existendes, o publica tu propio. Nos especializamos en llevar productos a donde se necesitan.
+              </p>
+            </div>
+            <div class="col-3 align-items-center">
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="row mb-2">
+          <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <h3 class="mb-1"> Maneja </h3>
+                <p class="card-text mb-auto">Aplica para ser un conductor autorizado y encuentra tu siguiente trabajo.</p>
+
+                <a href="#pedidos" class="btn btn-outline-primary">Quiero manejar</a>
+                </a>
+              </div>
+              <div class="col-auto d-none d-lg-block object-fit-fill">
+                <img src="images/driving2.jpeg" width="225" height="250" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <h3 class="mb-1">Ordena</h3>
+                <p class="mb-auto">Utiliza nuestra plataforma para publicar avisos sobre transportes.</p>
+                <a href="#pedidos" class="btn btn-outline-primary">Quiero ordenar</a>
+                </a>
+              </div>
+              <div class="col-auto d-none d-lg-block object-fit-fill">
+                <img src="images/computer2.jpg" width="225" height="250" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+    <container/>
+
+  <div class="container marketing">
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-6">
+        <h2 class="featurette-heading fw-normal lh-1">Consigue transporte instántaneo.<span class="text-body-secondary"> Más fácil que nunca.</span></h2>
+        <p class="lead">Nuestra plataforma pública permite accesar pedidos desde cualquier punto de la república.</p>
+      </div>
+      <div class="col-md-6">
+        <img src="images/finaldriver.jpeg" class="img-fluid rounded" alt="">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1"> Busca rutas en linea.<span class="text-body-secondary"> Utiliza nuestros anuncios dígitales. </span></h2>
+        <p class="lead">Nuestro sitio web te ayudará a encontrar rutas y pedidos cercanos a tí, cmo nunca antes.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="images/cargo.jpeg" class="img-fluid rounded" alt="">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+        <div class="col d-flex flex-column align-items-start gap-2">
+          <h2 class="featurette-heading fw-normal"> Nuestros beneficios hablan por si mismos</h2>
+          <p class="text-body-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, placeat tenetur laborum velit, sapiente tempore nulla perspiciatis nihil eos et doloremque! Dolorum facilis quo perferendis recusandae debitis quas harum temporibus.</p>
+        </div>
+  
+        <div class="col">
+          <div class="row row-cols-1 row-cols-sm-2 g-4">
+            <div class="col d-flex flex-column gap-2">
+              <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                <svg class="bi" width="1em" height="1em">
+                  <use xlink:href="#collection" />
+                </svg>
+              </div>
+              <h4 class="fw-semibold mb-0 text-body-emphasis">Base de datos</h4>
+              <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+  
+            <div class="col d-flex flex-column gap-2">
+              <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                <svg class="bi" width="1em" height="1em">
+                  <use xlink:href="#gear-fill" />
+                </svg>
+              </div>
+              <h4 class="fw-semibold mb-0 text-body-emphasis">Servicios técnicos</h4>
+              <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+  
+            <div class="col d-flex flex-column gap-2">
+              <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                <svg class="bi" width="1em" height="1em">
+                  <use xlink:href="#speedometer" />
+                </svg>
+              </div>
+              <h4 class="fw-semibold mb-0 text-body-emphasis">Velocidad</h4>
+              <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+  
+            <div class="col d-flex flex-column gap-2">
+              <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                <svg class="bi" width="1em" height="1em">
+                  <use xlink:href="#table" />
+                </svg>
+              </div>
+              <h4 class="fw-semibold mb-0 text-body-emphasis">Información</h4>
+              <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+  <!-- FOOTER -->
+  <div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <p class="col-md-4 mb-0 text-body-secondary">&copy; 2024 Grupo Gonave S.A. de C.V.</p>
+  
+      <img class="fluid-img align-items-center justify-content-center" src="images/logofinal-removebg-preview.png" height="100" width="100">
+  
+      <ul class="nav col-md-4 justify-content-end">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Inicio</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Ordena</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Maneja</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Nosotros</a></li>
+      </ul>
+    </footer>
+  </div>
+
+</main>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+    </body>
+</html>
